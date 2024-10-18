@@ -20,6 +20,17 @@ jobs:
             const migrationLevel = migrationLevelMatch ? migrationLevelMatch[1].trim() : "organization"; // default to organization
             console.log("Migration Level: ", migrationLevel);
             core.setOutput("migration_level", migrationLevel);
+      - name: Validate PAT tokens
+        run: |
+          if [[ -z "${{ secrets.SOURCE_TOKEN }}" ]]; then
+            echo "Source Token is missing!"
+            exit 1
+          fi
+          if [[ -z "${{ secrets.TARGET_TOKEN }}" ]]; then
+          echo "Target Token is missing!"
+          exit 1
+          fi
+        shell: bash
 
   Org-level_migration:
     runs-on: ubuntu-latest
