@@ -49,12 +49,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install gh
         env:
-          GH_TOKEN: ${{ secrets.SOURCE_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
 
       - name: Install gh-seva extension
         run: gh extension install MGMResorts/gh-environments
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.SOURCE_TOKEN }}
 
       - name: Get Issue Body
         id: issue_body
