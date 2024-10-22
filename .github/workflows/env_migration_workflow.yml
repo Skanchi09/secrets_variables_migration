@@ -52,7 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Install gh-seva extension
-        run: gh extension install Skanchi09/gh-environments
+        run: gh extension install MGMResorts/gh-environments
         env:
           GH_TOKEN: ${{ github.token }}
 
