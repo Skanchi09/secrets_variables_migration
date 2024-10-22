@@ -145,7 +145,7 @@ jobs:
       - name: Install gh-seva extension
         run: gh extension install MGMResorts/gh-seva
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.SOURCE_TOKEN }}
 
       - name: Get Issue Body
         id: issue_body
