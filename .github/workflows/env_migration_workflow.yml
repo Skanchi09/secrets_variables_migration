@@ -49,7 +49,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install gh
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.SOURCE_TOKEN }}
 
       - name: Install gh-seva extension
         run: gh extension install MGMResorts/gh-environments
